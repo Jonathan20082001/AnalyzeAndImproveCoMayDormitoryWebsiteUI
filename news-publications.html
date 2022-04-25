@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  dir="ltr"
+  prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# "
+>
+ <meta
+    http-equiv="content-type"
+    content="text/html;charset=UTF-8"
+  />
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+      (window.NREUM || (NREUM = {})).loader_config = {
+        licenseKey: "653864388b",
+        applicationID: "17864592",
+      };
+      window.NREUM || (NREUM = {}),
+        (__nr_require = (function (t, e, n) {
+          function r(n) {
+            if (!e[n]) {
+              var i = (e[n] = { exports: {} });
+              t[n][0].call(
+                i.exports,
+                function (e) {
+                  var i = t[n][1][e];
+                  return r(i || e);
+                },
+                i,
+                i.exports
+              );
+            }
+            return e[n].exports;
+          }
+          if ("function" == typeof __nr_require) return __nr_require;
+          for (var i = 0; i < n.length; i++) r(n[i]);
+          return r;
+        })(
+          {
+            1: [
+              function (t, e, n) {
+                function r() {}
+                function i(t, e, n) {
+                  return function () {
+                    return (
+                      o(t, [u.now()].concat(f(arguments)), e ? null : this, n),
+                      e ? void 0 : this
+                    );
+                  };
+                }
+                var o = t("handle"),
+                  a = t(8),
+                  f = t(9),
+                  c = t("ee").get("tracer"),
+                  u = t("loader"),
+                  s = NREUM;
+                "undefined" == typeof window.newrelic && (newrelic = s);
+                var d = [
+                    "setPageViewName",
+                    "setCustomAttribute",
+                    "setErrorHandler",
+                    "finished",
+                    "addToTrace",
+                    "inlineHit",
+                    "addRelease",
+                  ],
+                  p = "api-",
+                  l = p + "ixn-";
+                a(d, function (t, e) {
+                  s[e] = i(p + e, !0, "api");
+                }),
+                  (s.addPageAction = i(p + "addPageAction", !0)),
+                  (s.setCurrentRouteName = i(p + "routeName", !0)),
+                  (e.exports = newrelic),
+                  (s.interaction = function () {
+                    return new r().get();
+                  });
+                var m = (r.prototype = {
+                  createTracer: function (t, e) {
+                    var n = {},
+                      r = this,
+                      i = "function" == typeof e;
+                    return (
+                      o(l + "tracer", [u.now(), t, n], r),
+                      function () {
+                        if (
+                          (c.emit(
+                            (i ? "" : "no-") + "fn-start",
+                            [u.now(), r, i],
+                            n
+                          ),
+                          i)
+                        )
+                          try {
+                            return e.apply(this, arguments);
+                          } catch (t) {
+                            throw (
+                              (c.emit("fn-err", [arguments, this, t], n), t)
+                            );
+                          } finally {
+                            c.emit("fn-end", [u.now()], n);
+                          }
+                      }
+                    );
+                  },
+                });
+                a(
+                  "actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(
+                    ","
+                  ),
+                  function (t, e) {
+                    m[e] = i(l + e);
+                  }
+                ),
+                  (newrelic.noticeError = function (t, e) {
+                    "string" == typeof t && (t = new Error(t)),
+                      o("err", [t, u.now(), !1, e]);
+                  });
+              },
+              {},
+            ],
+            2: [
+              function (t, e, n) {
+                function r(t) {
+                  if (NREUM.init) {
+                    for (
+                      var e = NREUM.init, n = t.split("."), r = 0;
+                      r < n.length - 1;
+                      r++
+                    )
+                      if (((e = e[n[r]]), "object" != typeof e)) return;
+                    return (e = e[n[n.length - 1]]);
+                  }
+                }
+                e.exports = { getConfiguration: r };
+              },
+              {},
+            ],
+            3: [
+              function (t, e, n) {
+                function r() {
+                  return f.exists && performance.now
+                    ? Math.round(performance.now())
+                    : (o = Math.max(new Date().getTime(), o)) - a;
+                }
+                function i() {
+                  return o;
+                }
+                var o = new Date().getTime(),
+                  a = o,
+                  f = t(10);
+                (e.exports = r),
+                  (e.exports.offset = a),
+                  (e.exports.getLastTimestamp = i);
+              },
+              {},
+            ],
+            4: [
+              function (t, e, n) {
+                function r(t) {
+                  return !(!t || !t.protocol || "file:" === t.protocol);
+                }
+                e.exports = r;
+              },
+              {},
+            ],
+            5: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = t.getEntries();
+                  n.forEach(function (t) {
+                    "first-paint" === t.name
+                      ? d("timing", ["fp", Math.floor(t.startTime)])
+                      : "first-contentful-paint" === t.name &&
+                        d("timing", ["fcp", Math.floor(t.startTime)]);
+                  });
+                }
+                function i(t, e) {
+                  var n = t.getEntries();
+                  n.length > 0 && d("lcp", [n[n.length - 1]]);
+                }
+                function o(t) {
+                  t.getEntries().forEach(function (t) {
+                    t.hadRecentInput || d("cls", [t]);
+                  });
+                }
+                function a(t) {
+                  if (t instanceof m && !g) {
+                    var e = Math.round(t.timeStamp),
+                      n = { type: t.type };
+                    e <= p.now()
+                      ? (n.fid = p.now() - e)
+                      : e > p.offset && e <= Date.now()
+                      ? ((e -= p.offset), (n.fid = p.now() - e))
+                      : (e = p.now()),
+                      (g = !0),
+                      d("timing", ["fi", e, n]);
+                  }
+                }
+                function f(t) {
+                  "hidden" === t && d("pageHide", [p.now()]);
+                }
+                if (
+                  !(
+                    "init" in NREUM &&
+                    "page_view_timing" in NREUM.init &&
+                    "enabled" in NREUM.init.page_view_timing &&
+                    NREUM.init.page_view_timing.enabled === !1
+                  )
+                ) {
+                  var c,
+                    u,
+                    s,
+                    d = t("handle"),
+                    p = t("loader"),
+                    l = t(7),
+                    m = NREUM.o.EV;
+                  if (
+                    "PerformanceObserver" in window &&
+                    "function" == typeof window.PerformanceObserver
+                  ) {
+                    c = new PerformanceObserver(r);
+                    try {
+                      c.observe({ entryTypes: ["paint"] });
+                    } catch (v) {}
+                    u = new PerformanceObserver(i);
+                    try {
+                      u.observe({ entryTypes: ["largest-contentful-paint"] });
+                    } catch (v) {}
+                    s = new PerformanceObserver(o);
+                    try {
+                      s.observe({ type: "layout-shift", buffered: !0 });
+                    } catch (v) {}
+                  }
+                  if ("addEventListener" in document) {
+                    var g = !1,
+                      h = [
+                        "click",
+                        "keydown",
+                        "mousedown",
+                        "pointerdown",
+                        "touchstart",
+                      ];
+                    h.forEach(function (t) {
+                      document.addEventListener(t, a, !1);
+                    });
+                  }
+                  l(f);
+                }
+              },
+              {},
+            ],
+            6: [
+              function (t, e, n) {
+                function r(t, e) {
+                  if (!i) return !1;
+                  if (t !== i) return !1;
+                  if (!e) return !0;
+                  if (!o) return !1;
+                  for (
+                    var n = o.split("."), r = e.split("."), a = 0;
+                    a < r.length;
+                    a++
+                  )
+                    if (r[a] !== n[a]) return !1;
+                  return !0;
+                }
+                var i = null,
+                  o = null,
+                  a = /Version\/(\S+)\s+Safari/;
+                if (navigator.userAgent) {
+                  var f = navigator.userAgent,
+                    c = f.match(a);
+                  c &&
+                    f.indexOf("Chrome") === -1 &&
+                    f.indexOf("Chromium") === -1 &&
+                    ((i = "Safari"), (o = c[1]));
+                }
+                e.exports = { agent: i, version: o, match: r };
+              },
+              {},
+            ],
+            7: [
+              function (t, e, n) {
+                function r(t) {
+                  function e() {
+                    t(
+                      a && document[a]
+                        ? document[a]
+                        : document[i]
+                        ? "hidden"
+                        : "visible"
+                    );
+                  }
+                  "addEventListener" in document &&
+                    o &&
+                    document.addEventListener(o, e, !1);
+                }
+                e.exports = r;
+                var i, o, a;
+                "undefined" != typeof document.hidden
+                  ? ((i = "hidden"),
+                    (o = "visibilitychange"),
+                    (a = "visibilityState"))
+                  : "undefined" != typeof document.msHidden
+                  ? ((i = "msHidden"), (o = "msvisibilitychange"))
+                  : "undefined" != typeof document.webkitHidden &&
+                    ((i = "webkitHidden"),
+                    (o = "webkitvisibilitychange"),
+                    (a = "webkitVisibilityState"));
+              },
+              {},
+            ],
+            8: [
+              function (t, e, n) {
+                function r(t, e) {
+                  var n = [],
+                    r = "",
+                    o = 0;
+                  for (r in t) i.call(t, r) && ((n[o] = e(r, t[r])), (o += 1));
+                  return n;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            9: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  e || (e = 0),
+                    "undefined" == typeof n && (n = t ? t.length : 0);
+                  for (
+                    var r = -1, i = n - e || 0, o = Array(i < 0 ? 0 : i);
+                    ++r < i;
+
+                  )
+                    o[r] = t[e + r];
+                  return o;
+                }
+                e.exports = r;
+              },
+              {},
+            ],
+            10: [
+              function (t, e, n) {
+                e.exports = {
+                  exists:
+                    "undefined" != typeof window.performance &&
+                    window.performance.timing &&
+                    "undefined" !=
+                      typeof window.performance.timing.navigationStart,
+                };
+              },
+              {},
+            ],
+            ee: [
+              function (t, e, n) {
+                function r() {}
+                function i(t) {
+                  function e(t) {
+                    return t && t instanceof r ? t : t ? u(t, c, a) : a();
+                  }
+                  function n(n, r, i, o, a) {
+                    if ((a !== !1 && (a = !0), !l.aborted || o)) {
+                      t && a && t(n, r, i);
+                      for (
+                        var f = e(i), c = v(n), u = c.length, s = 0;
+                        s < u;
+                        s++
+                      )
+                        c[s].apply(f, r);
+                      var p = d[w[n]];
+                      return p && p.push([b, n, r, f]), f;
+                    }
+                  }
+                  function o(t, e) {
+                    y[t] = v(t).concat(e);
+                  }
+                  function m(t, e) {
+                    var n = y[t];
+                    if (n)
+                      for (var r = 0; r < n.length; r++)
+                        n[r] === e && n.splice(r, 1);
+                  }
+                  function v(t) {
+                    return y[t] || [];
+                  }
+                  function g(t) {
+                    return (p[t] = p[t] || i(n));
+                  }
+                  function h(t, e) {
+                    l.aborted ||
+                      s(t, function (t, n) {
+                        (e = e || "feature"), (w[n] = e), e in d || (d[e] = []);
+                      });
+                  }
+                  var y = {},
+                    w = {},
+                    b = {
+                      on: o,
+                      addEventListener: o,
+                      removeEventListener: m,
+                      emit: n,
+                      get: g,
+                      listeners: v,
+                      context: e,
+                      buffer: h,
+                      abort: f,
+                      aborted: !1,
+                    };
+                  return b;
+                }
+                function o(t) {
+                  return u(t, c, a);
+                }
+                function a() {
+                  return new r();
+                }
+                function f() {
+                  (d.api || d.feature) &&
+                    ((l.aborted = !0), (d = l.backlog = {}));
+                }
+                var c = "nr@context",
+                  u = t("gos"),
+                  s = t(8),
+                  d = {},
+                  p = {},
+                  l = (e.exports = i());
+                (e.exports.getOrSetContext = o), (l.backlog = d);
+              },
+              {},
+            ],
+            gos: [
+              function (t, e, n) {
+                function r(t, e, n) {
+                  if (i.call(t, e)) return t[e];
+                  var r = n();
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      return (
+                        Object.defineProperty(t, e, {
+                          value: r,
+                          writable: !0,
+                          enumerable: !1,
+                        }),
+                        r
+                      );
+                    } catch (o) {}
+                  return (t[e] = r), r;
+                }
+                var i = Object.prototype.hasOwnProperty;
+                e.exports = r;
+              },
+              {},
+            ],
+            handle: [
+              function (t, e, n) {
+                function r(t, e, n, r) {
+                  i.buffer([t], r), i.emit(t, e, n);
+                }
+                var i = t("ee").get("handle");
+                (e.exports = r), (r.ee = i);
+              },
+              {},
+            ],
+            id: [
+              function (t, e, n) {
+                function r(t) {
+                  var e = typeof t;
+                  return !t || ("object" !== e && "function" !== e)
+                    ? -1
+                    : t === window
+                    ? 0
+                    : a(t, o, function () {
+                        return i++;
+                      });
+                }
+                var i = 1,
+                  o = "nr@id",
+                  a = t("gos");
+                e.exports = r;
+              },
+              {},
+            ],
+            loader: [
+              function (t, e, n) {
+                function r() {
+                  if (!R++) {
+                    var t = (M.info = NREUM.info),
+                      e = v.getElementsByTagName("script")[0];
+                    if (
+                      (setTimeout(u.abort, 3e4),
+                      !(t && t.licenseKey && t.applicationID && e))
+                    )
+                      return u.abort();
+                    c(E, function (e, n) {
+                      t[e] || (t[e] = n);
+                    });
+                    var n = a();
+                    f("mark", ["onload", n + M.offset], null, "api"),
+                      f("timing", ["load", n]);
+                    var r = v.createElement("script");
+                    0 === t.agent.indexOf("http://") ||
+                    0 === t.agent.indexOf("https:///")
+                      ? (r.src = t.agent)
+                      : (r.src = l + "://" + t.agent),
+                      e.parentNode.insertBefore(r, e);
+                  }
+                }
+                function i() {
+                  "complete" === v.readyState && o();
+                }
+                function o() {
+                  f("mark", ["domContent", a() + M.offset], null, "api");
+                }
+                var a = t(3),
+                  f = t("handle"),
+                  c = t(8),
+                  u = t("ee"),
+                  s = t(6),
+                  d = t(4),
+                  p = t(2),
+                  l = p.getConfiguration("ssl") === !1 ? "http" : "https",
+                  m = window,
+                  v = m.document,
+                  g = "addEventListener",
+                  h = "attachEvent",
+                  y = m.XMLHttpRequest,
+                  w = y && y.prototype,
+                  b = !d(m.location);
+                NREUM.o = {
+                  ST: setTimeout,
+                  SI: m.setImmediate,
+                  CT: clearTimeout,
+                  XHR: y,
+                  REQ: m.Request,
+                  EV: m.Event,
+                  PR: m.Promise,
+                  MO: m.MutationObserver,
+                };
+                var x = "" + location,
+                  E = {
+                    beacon: "bam.nr-data.net",
+                    errorBeacon: "bam.nr-data.net",
+                    agent: "js-agent.newrelic.com/nr-1210.min.js",
+                  },
+                  O = y && w && w[g] && !/CriOS/.test(navigator.userAgent),
+                  M = (e.exports = {
+                    offset: a.getLastTimestamp(),
+                    now: a,
+                    origin: x,
+                    features: {},
+                    xhrWrappable: O,
+                    userAgent: s,
+                    disabled: b,
+                  });
+                if (!b) {
+                  t(1),
+                    t(5),
+                    v[g]
+                      ? (v[g]("DOMContentLoaded", o, !1), m[g]("load", r, !1))
+                      : (v[h]("onreadystatechange", i), m[h]("onload", r)),
+                    f("mark", ["firstbyte", a.getLastTimestamp()], null, "api");
+                  var R = 0;
+                }
+              },
+              {},
+            ],
+            "wrap-function": [
+              function (t, e, n) {
+                function r(t, e) {
+                  function n(e, n, r, c, u) {
+                    function nrWrapper() {
+                      var o, a, s, p;
+                      try {
+                        (a = this),
+                          (o = d(arguments)),
+                          (s = "function" == typeof r ? r(o, a) : r || {});
+                      } catch (l) {
+                        i([l, "", [o, a, c], s], t);
+                      }
+                      f(n + "start", [o, a, c], s, u);
+                      try {
+                        return (p = e.apply(a, o));
+                      } catch (m) {
+                        throw (f(n + "err", [o, a, m], s, u), m);
+                      } finally {
+                        f(n + "end", [o, a, p], s, u);
+                      }
+                    }
+                    return a(e)
+                      ? e
+                      : (n || (n = ""),
+                        (nrWrapper[p] = e),
+                        o(e, nrWrapper, t),
+                        nrWrapper);
+                  }
+                  function r(t, e, r, i, o) {
+                    r || (r = "");
+                    var f,
+                      c,
+                      u,
+                      s = "-" === r.charAt(0);
+                    for (u = 0; u < e.length; u++)
+                      (c = e[u]),
+                        (f = t[c]),
+                        a(f) || (t[c] = n(f, s ? c + r : r, i, c, o));
+                  }
+                  function f(n, r, o, a) {
+                    if (!m || e) {
+                      var f = m;
+                      m = !0;
+                      try {
+                        t.emit(n, r, o, e, a);
+                      } catch (c) {
+                        i([c, n, r, o], t);
+                      }
+                      m = f;
+                    }
+                  }
+                  return t || (t = s), (n.inPlace = r), (n.flag = p), n;
+                }
+                function i(t, e) {
+                  e || (e = s);
+                  try {
+                    e.emit("internal-error", t);
+                  } catch (n) {}
+                }
+                function o(t, e, n) {
+                  if (Object.defineProperty && Object.keys)
+                    try {
+                      var r = Object.keys(t);
+                      return (
+                        r.forEach(function (n) {
+                          Object.defineProperty(e, n, {
+                            get: function () {
+                              return t[n];
+                            },
+                            set: function (e) {
+                              return (t[n] = e), e;
+                            },
+                          });
+                        }),
+                        e
+                      );
+                    } catch (o) {
+                      i([o], n);
+                    }
+                  for (var a in t) l.call(t, a) && (e[a] = t[a]);
+                  return e;
+                }
+                function a(t) {
+                  return !(t && t instanceof Function && t.apply && !t[p]);
+                }
+                function f(t, e) {
+                  var n = e(t);
+                  return (n[p] = t), o(t, n, s), n;
+                }
+                function c(t, e, n) {
+                  var r = t[e];
+                  t[e] = f(r, n);
+                }
+                function u() {
+                  for (
+                    var t = arguments.length, e = new Array(t), n = 0;
+                    n < t;
+                    ++n
+                  )
+                    e[n] = arguments[n];
+                  return e;
+                }
+                var s = t("ee"),
+                  d = t(9),
+                  p = "nr@original",
+                  l = Object.prototype.hasOwnProperty,
+                  m = !1;
+                (e.exports = r),
+                  (e.exports.wrapFunction = f),
+                  (e.exports.wrapInPlace = c),
+                  (e.exports.argsToArray = u);
+              },
+              {},
+            ],
+          },
+          {},
+          ["loader"]
+        ));
+    </script>
+    <script>
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "../www.google-analytics.com/analytics.js",
+        "ga"
+      );
+      ga("create", "UA-85089365-1", { cookieDomain: "auto" });
+      ga("send", "pageview");
+    </script>
+    <meta name="title" content="News &amp; Publications | EYP" />
+    <meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+    <meta name="MobileOptimized" content="width" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://ktxcomay.com.vn/themes/cm-ktx-20/assets/images/logocmg.ico"
+      type="image/x-icon"
+    />
+    <title>News |Page1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="grunticon"
+      content="/themes/custom/eyp/dist/svg/"
+      id="grunticon"
+    />
+
+    <script>
+      /*! grunt-grunticon Stylesheet Loader - v2.1.6 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+
+      !(function () {
+        function e(e, n, t) {
+          "use strict";
+          var o = window.document.createElement("link"),
+            r = n || window.document.getElementsByTagName("script")[0],
+            a = window.document.styleSheets;
+          return (
+            (o.rel = "stylesheet"),
+            (o.href = e),
+            (o.media = "only x"),
+            r.parentNode.insertBefore(o, r),
+            (o.onloadcssdefined = function (e) {
+              for (var n, t = 0; t < a.length; t++)
+                a[t].href && a[t].href === o.href && (n = !0);
+              n
+                ? e()
+                : setTimeout(function () {
+                    o.onloadcssdefined(e);
+                  });
+            }),
+            o.onloadcssdefined(function () {
+              o.media = t || "all";
+            }),
+            o
+          );
+        }
+        function n(e, n) {
+          (e.onload = function () {
+            (e.onload = null), n && n.call(e);
+          }),
+            "isApplicationInstalled" in navigator &&
+              "onloadcssdefined" in e &&
+              e.onloadcssdefined(n);
+        }
+        !(function (t) {
+          var o = function (r, a) {
+            "use strict";
+            if (r && 3 === r.length) {
+              var i = t.navigator,
+                c = t.document,
+                s = t.Image,
+                d = !(
+                  !c.createElementNS ||
+                  !c.createElementNS("http://www.w3.org/2000/svg", "svg")
+                    .createSVGRect ||
+                  !c.implementation.hasFeature(
+                    "http://www.w3.org/TR/SVG11/feature#Image",
+                    "1.1"
+                  ) ||
+                  (t.opera && i.userAgent.indexOf("Chrome") === -1) ||
+                  i.userAgent.indexOf("Series40") !== -1
+                ),
+                l = new s();
+              (l.onerror = function () {
+                (o.method = "png"), (o.href = r[2]), e(r[2]);
+              }),
+                (l.onload = function () {
+                  var t = 1 === l.width && 1 === l.height,
+                    i = r[t && d ? 0 : t ? 1 : 2];
+                  t && d
+                    ? (o.method = "svg")
+                    : t
+                    ? (o.method = "datapng")
+                    : (o.method = "png"),
+                    (o.href = i),
+                    n(e(i), a);
+                }),
+                (l.src =
+                  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="),
+                (c.documentElement.className += " grunticon");
+            }
+          };
+          (o.loadCSS = e), (o.onloadCSS = n), (t.grunticon = o);
+        })(this),
+          (function (e, n) {
+            "use strict";
+            var t = n.document,
+              o = "grunticon:",
+              r = function (e) {
+                if (
+                  t.attachEvent
+                    ? "complete" === t.readyState
+                    : "loading" !== t.readyState
+                )
+                  e();
+                else {
+                  var n = !1;
+                  t.addEventListener(
+                    "readystatechange",
+                    function () {
+                      n || ((n = !0), e());
+                    },
+                    !1
+                  );
+                }
+              },
+              a = function (e) {
+                return n.document.querySelector('link[href$="' + e + '"]');
+              },
+              i = function (e) {
+                var n,
+                  t,
+                  r,
+                  a,
+                  i,
+                  c,
+                  s = {};
+                if (((n = e.sheet), !n)) return s;
+                t = n.cssRules ? n.cssRules : n.rules;
+                for (var d = 0; d < t.length; d++)
+                  (r = t[d].cssText),
+                    (a = o + t[d].selectorText),
+                    (i = r.split(");")[0].match(/US\-ASCII\,([^"']+)/)),
+                    i && i[1] && ((c = decodeURIComponent(i[1])), (s[a] = c));
+                return s;
+              },
+              c = function (e) {
+                var n, r, a, i;
+                a = "data-grunticon-embed";
+                for (var c in e) {
+                  i = c.slice(o.length);
+                  try {
+                    n = t.querySelectorAll(i);
+                  } catch (s) {
+                    continue;
+                  }
+                  r = [];
+                  for (var d = 0; d < n.length; d++)
+                    null !== n[d].getAttribute(a) && r.push(n[d]);
+                  if (r.length)
+                    for (d = 0; d < r.length; d++)
+                      (r[d].innerHTML = e[c]),
+                        (r[d].style.backgroundImage = "none"),
+                        r[d].removeAttribute(a);
+                }
+                return r;
+              },
+              s = function (n) {
+                "svg" === e.method &&
+                  r(function () {
+                    c(i(a(e.href))), "function" == typeof n && n();
+                  });
+              };
+            (e.embedIcons = c),
+              (e.getCSS = a),
+              (e.getIcons = i),
+              (e.ready = r),
+              (e.svgLoadedCallback = s),
+              (e.embedSVG = s);
+          })(grunticon, this);
+      })();
+      (function () {
+        "use strict";
+        var f = [];
+        function g(a) {
+          f.push(a);
+          1 === f.length && l();
+        }
+        function m() {
+          for (; f.length; ) f[0](), f.shift();
+        }
+        if (window.MutationObserver) {
+          var n = document.createElement("div");
+          new MutationObserver(m).observe(n, { attributes: !0 });
+          var l = function () {
+            n.setAttribute("x", 0);
+          };
+        } else
+          l = function () {
+            setTimeout(m);
+          };
+        function p(a) {
+          this.a = q;
+          this.b = void 0;
+          this.f = [];
+          var b = this;
+          try {
+            a(
+              function (a) {
+                r(b, a);
+              },
+              function (a) {
+                t(b, a);
+              }
+            );
+          } catch (c) {
+            t(b, c);
+          }
+        }
+        var q = 2;
+        function u(a) {
+          return new p(function (b, c) {
+            c(a);
+          });
+        }
+        function v(a) {
+          return new p(function (b) {
+            b(a);
+          });
+        }
+        function r(a, b) {
+          if (a.a === q) {
+            if (b === a) throw new TypeError("Promise settled with itself.");
+            var c = !1;
+            try {
+              var d = b && b.then;
+              if (
+                null !== b &&
+                "object" === typeof b &&
+                "function" === typeof d
+              ) {
+                d.call(
+                  b,
+                  function (b) {
+                    c || r(a, b);
+                    c = !0;
+                  },
+                  function (b) {
+                    c || t(a, b);
+                    c = !0;
+                  }
+                );
+                return;
+              }
+            } catch (e) {
+              c || t(a, e);
+              return;
+            }
+            a.a = 0;
+            a.b = b;
+            w(a);
+          }
+        }
+        function t(a, b) {
+          if (a.a === q) {
+            if (b === a) throw new TypeError("Promise settled with itself.");
+            a.a = 1;
+            a.b = b;
+            w(a);
+          }
+        }
+        function w(a) {
+          g(function () {
+            if (a.a !== q)
+              for (; a.f.length; ) {
+                var b = a.f.shift(),
+                  c = b[0],
+                  d = b[1],
+                  e = b[2],
+                  b = b[3];
+                try {
+                  0 === a.a
+                    ? "function" === typeof c
+                      ? e(c.call(void 0, a.b))
+                      : e(a.b)
+                    : 1 === a.a &&
+                      ("function" === typeof d
+                        ? e(d.call(void 0, a.b))
+                        : b(a.b));
+                } catch (h) {
+                  b(h);
+                }
+              }
+          });
+        }
+        p.prototype.g = function (a) {
+          return this.c(void 0, a);
+        };
+        p.prototype.c = function (a, b) {
+          var c = this;
+          return new p(function (d, e) {
+            c.f.push([a, b, d, e]);
+            w(c);
+          });
+        };
+        function x(a) {
+          return new p(function (b, c) {
+            function d(c) {
+              return function (d) {
+                h[c] = d;
+                e += 1;
+                e === a.length && b(h);
+              };
+            }
+            var e = 0,
+              h = [];
+            0 === a.length && b(h);
+            for (var k = 0; k < a.length; k += 1) a[k].c(d(k), c);
+          });
+        }
+        function y(a) {
+          return new p(function (b, c) {
+            for (var d = 0; d < a.length; d += 1) a[d].c(b, c);
+          });
+        }
+        window.Promise ||
+          ((window.Promise = p),
+          (window.Promise.resolve = v),
+          (window.Promise.reject = u),
+          (window.Promise.race = y),
+          (window.Promise.all = x),
+          (window.Promise.prototype.then = p.prototype.c),
+          (window.Promise.prototype["catch"] = p.prototype.g));
+      })();
+
+      (function () {
+        "use strict";
+        function h(a) {
+          function b() {
+            document.body ? a() : setTimeout(b, 0);
+          }
+          b();
+        }
+        function v(a) {
+          this.a = document.createElement("div");
+          this.a.setAttribute("aria-hidden", "true");
+          this.a.appendChild(document.createTextNode(a));
+          this.b = document.createElement("span");
+          this.c = document.createElement("span");
+          this.h = document.createElement("span");
+          this.g = document.createElement("span");
+          this.f = -1;
+          this.b.style.cssText =
+            "display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+          this.c.style.cssText =
+            "display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+          this.g.style.cssText =
+            "display:inline-block;position:absolute;height:100%;width:100%;overflow:scroll;font-size:16px;";
+          this.h.style.cssText =
+            "display:inline-block;width:200%;height:200%;font-size:16px;";
+          this.b.appendChild(this.h);
+          this.c.appendChild(this.g);
+          this.a.appendChild(this.b);
+          this.a.appendChild(this.c);
+        }
+        function w(a, b, c) {
+          a.a.style.cssText =
+            "min-width:20px;min-height:20px;display:inline-block;overflow:hidden;position:absolute;width:auto;margin:0;padding:0;top:-999px;left:-999px;white-space:nowrap;font-size:100px;font-family:" +
+            b +
+            ";" +
+            c;
+        }
+        function x(a) {
+          var b = a.a.offsetWidth,
+            c = b + 100;
+          a.g.style.width = c + "px";
+          a.c.scrollLeft = c;
+          a.b.scrollLeft = a.b.scrollWidth + 100;
+          return a.f !== b ? ((a.f = b), !0) : !1;
+        }
+        function y(a, b) {
+          a.b.addEventListener(
+            "scroll",
+            function () {
+              x(a) && null !== a.a.parentNode && b(a.f);
+            },
+            !1
+          );
+          a.c.addEventListener(
+            "scroll",
+            function () {
+              x(a) && null !== a.a.parentNode && b(a.f);
+            },
+            !1
+          );
+          x(a);
+        }
+        function z(a, b) {
+          var c = b || {};
+          this.family = a;
+          this.style = c.style || "normal";
+          this.variant = c.variant || "normal";
+          this.weight = c.weight || "normal";
+          this.stretch = c.stretch || "stretch";
+          this.featureSettings = c.featureSettings || "normal";
+        }
+        var B = null;
+        z.prototype.a = function (a, b) {
+          var c = a || "BESbswy",
+            C = b || 3e3,
+            k =
+              "font-style:" +
+              this.style +
+              ";font-variant:" +
+              this.variant +
+              ";font-weight:" +
+              this.weight +
+              ";font-stretch:" +
+              this.stretch +
+              ";font-feature-settings:" +
+              this.featureSettings +
+              ";-moz-font-feature-settings:" +
+              this.featureSettings +
+              ";-webkit-font-feature-settings:" +
+              this.featureSettings +
+              ";",
+            g = document.createElement("div"),
+            l = new v(c),
+            m = new v(c),
+            n = new v(c),
+            d = -1,
+            e = -1,
+            f = -1,
+            q = -1,
+            r = -1,
+            t = -1,
+            p = this;
+          return new Promise(function (a, b) {
+            function c() {
+              null !== g.parentNode && g.parentNode.removeChild(g);
+            }
+            function u() {
+              if (
+                (-1 !== d && -1 !== e) ||
+                (-1 !== d && -1 !== f) ||
+                (-1 !== e && -1 !== f)
+              )
+                if (d === e || d === f || e === f) {
+                  if (null === B) {
+                    var b = /AppleWebKit\/([0-9]+)(?:\.([0-9]+))/.exec(
+                      window.navigator.userAgent
+                    );
+                    B =
+                      !!b &&
+                      (536 > parseInt(b[1], 10) ||
+                        (536 === parseInt(b[1], 10) &&
+                          11 >= parseInt(b[2], 10)));
+                  }
+                  B
+                    ? (d === q && e === q && f === q) ||
+                      (d === r && e === r && f === r) ||
+                      (d === t && e === t && f === t) ||
+                      (c(), a(p))
+                    : (c(), a(p));
+                }
+            }
+            h(function () {
+              function a() {
+                if (Date.now() - D >= C) c(), b(p);
+                else {
+                  var A = document.hidden;
+                  if (!0 === A || void 0 === A)
+                    (d = l.a.offsetWidth),
+                      (e = m.a.offsetWidth),
+                      (f = n.a.offsetWidth),
+                      u();
+                  setTimeout(a, 50);
+                }
+              }
+              var D = Date.now();
+              w(l, "sans-serif", k);
+              w(m, "serif", k);
+              w(n, "monospace", k);
+              g.appendChild(l.a);
+              g.appendChild(m.a);
+              g.appendChild(n.a);
+              document.body.appendChild(g);
+              q = l.a.offsetWidth;
+              r = m.a.offsetWidth;
+              t = n.a.offsetWidth;
+              a();
+              y(l, function (a) {
+                d = a;
+                u();
+              });
+              w(l, p.family + ",sans-serif", k);
+              y(m, function (a) {
+                e = a;
+                u();
+              });
+              w(m, p.family + ",serif", k);
+              y(n, function (a) {
+                f = a;
+                u();
+              });
+              w(n, p.family + ",monospace", k);
+            });
+          });
+        };
+        window.FontFaceObserver = z;
+        window.FontFaceObserver.prototype.check = z.prototype.a;
+      })();
+
+      window.EYP = {};
+      window.EYP.utils = {};
+      window.EYP.config = {};
+      window.EYP.lang = {};
+      (function (win, undefined) {
+        var lang = win.EYP.lang;
+
+        lang.moreLinks = {
+          textDefault: "More",
+          textAlt: "Less",
+        };
+      })(this);
+
+      (function (win, undefined) {
+        var EYP = win.EYP,
+          utils = EYP.utils;
+
+        // loadJS: load a JS file asynchronously. Included from https://github.com/filamentgroup/loadJS/
+        function loadJS(src, cb) {
+          "use strict";
+          var ref = window.document.getElementsByTagName("script")[0];
+          var script = window.document.createElement("script");
+          script.src = src;
+          script.async = true;
+          ref.parentNode.insertBefore(script, ref);
+          if (cb && typeof cb === "function") {
+            script.onload = cb;
+          }
+          return script;
+        }
+
+        utils.loadJS = loadJS;
+
+        /*!
+    loadCSS: load a CSS file asynchronously.
+    [c]2016 @scottjehl, Filament Group, Inc.
+    Licensed MIT
+    */
+        var loadCSS = function (href, before, media) {
+          // Arguments explained:
+          // `href` [REQUIRED] is the URL for your CSS file.
+          // `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+          // By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+          // `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+          var doc = w.document;
+          var ss = doc.createElement("link");
+          var ref;
+          if (before) {
+            ref = before;
+          } else {
+            var refs = (doc.body || doc.getElementsByTagName("head")[0])
+              .childNodes;
+            ref = refs[refs.length - 1];
+          }
+
+          var sheets = doc.styleSheets;
+          ss.rel = "stylesheet";
+          ss.href = href;
+          // temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+          ss.media = "only x";
+
+          // wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+          function ready(cb) {
+            if (doc.body) {
+              return cb();
+            }
+            setTimeout(function () {
+              ready(cb);
+            });
+          }
+          // Inject link
+          // Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+          // Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+          ready(function () {
+            ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+          });
+          // A method (exposed on return object for external use) that mimics onload by polling until document.styleSheets until it includes the new sheet.
+          var onloadcssdefined = function (cb) {
+            var resolvedHref = ss.href;
+            var i = sheets.length;
+            while (i--) {
+              if (sheets[i].href === resolvedHref) {
+                return cb();
+              }
+            }
+            setTimeout(function () {
+              onloadcssdefined(cb);
+            });
+          };
+
+          function loadCB() {
+            if (ss.addEventListener) {
+              ss.removeEventListener("load", loadCB);
+            }
+            ss.media = media || "all";
+          }
+
+          // once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+          if (ss.addEventListener) {
+            ss.addEventListener("load", loadCB);
+          }
+          ss.onloadcssdefined = onloadcssdefined;
+          onloadcssdefined(loadCB);
+          return ss;
+        };
+
+        utils.loadCSS = loadCSS;
+
+        // getMeta function: get a meta tag by name
+        // NOTE: meta tag must be in the HTML source before this script is included in order to guarantee it'll be found
+        function getMeta(metaname) {
+          var metas = window.document.getElementsByTagName("meta");
+          var meta;
+          for (var i = 0; i < metas.length; i++) {
+            if (metas[i].name && metas[i].name === metaname) {
+              meta = metas[i];
+              break;
+            }
+          }
+          return meta;
+        }
+
+        utils.getMeta = getMeta;
+
+        // Simple debounce (via http://davidwalsh.name/javascript-debounce-function)
+        var debounce = function (func, wait, immediate) {
+          var timeout;
+          return function () {
+            var context = this,
+              args = arguments;
+
+            var later = function () {
+              timeout = null;
+              if (!immediate) func.apply(context, args);
+            };
+
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+
+            if (callNow) func.apply(context, args);
+          };
+        };
+
+        utils.debounce = debounce;
+
+        // cookie function from https://github.com/filamentgroup/cookie/
+        function cookie(name, value, days) {
+          // if value is undefined, get the cookie value
+          if (value === undefined) {
+            var cookiestring = "; " + window.document.cookie;
+            var cookies = cookiestring.split("; " + name + "=");
+            if (cookies.length === 2) {
+              return cookies.pop().split(";").shift();
+            }
+            return null;
+          } else {
+            var expires;
+            // if value is a false boolean, we'll treat that as a delete
+            if (value === false) {
+              days = -1;
+            }
+            if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+              expires = "; expires=" + date.toGMTString();
+            } else {
+              expires = "";
+            }
+            window.document.cookie = name + "=" + value + expires + "; path=/";
+          }
+        }
+
+        utils.cookie = cookie;
+
+        // Need to call grunticon at any point?
+        utils.embedSVGs = false;
+
+        // Translate “String Of Text” into “string-of-text”
+        utils.slugify = function (text) {
+          return text
+            .toString()
+            .toLowerCase()
+            .trim()
+            .replace(/\s+/g, "-") // Replace spaces with -
+            .replace(/&/g, "") // Replace & with ''
+            .replace(/[^\w\-]+/g, "") // Remove all non-word chars
+            .replace(/\-\-+/g, "-"); // Replace multiple - with single -
+        };
+
+        // Has an element scrolled into view?
+        utils.isScrolledIntoView = function (el) {
+          var isVisible = false;
+
+          if (el.getBoundingClientRect()) {
+            var elemTop = el.getBoundingClientRect().top,
+              elemBottom = el.getBoundingClientRect().bottom;
+
+            isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
+          }
+
+          return isVisible;
+        };
+      })(this);
+
+      (function (win, undefined) {
+        // Enable JS strict mode
+        "use strict";
+
+        // Variables! The best.
+        var EYP = win.EYP,
+          utils = EYP.utils,
+          docClasses = ["enhanced"],
+          // grunticon config
+          grunticonPath = document.getElementById("grunticon"),
+          iconsDataSVG = "icons.data.svg.html",
+          iconsDataPNG = "icons.data.png.html",
+          iconsPNG = "icons.fallback.html",
+          // Meta keywords
+          fullJSKey = "fullJS",
+          fullCSSKey = "fullCSS";
+
+        EYP.is_enhanced = false;
+
+        /*
+Enhancements for all browsers.
+*/
+        // Load full CSS
+        var fullCSS = utils.getMeta(fullCSSKey);
+        if (fullCSS) {
+          utils.loadCSS(fullCSS.content);
+        }
+
+        // Grunticon
+        if (grunticonPath && grunticonPath.content) {
+          var path = grunticonPath.content;
+
+          // load 'em
+          utils.embedSVGs = function () {
+            grunticon(
+              [path + iconsDataSVG, path + iconsDataPNG, path + iconsPNG],
+              function () {
+                grunticon.svgLoadedCallback();
+              }
+            );
+          };
+
+          utils.embedSVGs();
+
+          if (grunticon.method) {
+            window.document.documentElement.className +=
+              " grunticon-" + grunticon.method;
+          }
+        }
+
+        /*
+Mustard cuttin'.
+*/
+        if (
+          !(
+            "querySelector" in document &&
+            "addEventListener" in window &&
+            "sessionStorage" in window
+          )
+        ) {
+          return;
+        }
+
+        /*
+Enhancements for QUALIFIED browsers.
+*/
+        // Yay! We passed!
+        EYP.is_enhanced = true;
+
+        // Flexbox support? (Specifically looking for `flex-wrap`.)
+        var s = document.body || document.documentElement,
+          s = s.style;
+        if (s.webkitFlexWrap == "" || s.msFlexWrap == "" || s.flexWrap == "") {
+          docClasses.push("supports-flex");
+        }
+
+        // Font Loading!
+        var fontsClass = "fonts-loaded";
+
+        if (sessionStorage.getItem("fontsLoaded") === "loaded") {
+          docClasses.push(fontsClass);
+        } else {
+          // Okay! Let’s watch for font events!
+          var theSans = new FontFaceObserver("TheSans", {
+            weight: 400,
+          });
+          var theSansItalic = new FontFaceObserver("TheSans", {
+            style: "italic",
+            weight: 400,
+          });
+          var theSansBold = new FontFaceObserver("TheSans", {
+            weight: 600,
+          });
+
+          // When the fonts above are loaded, we'll attach a .fonts-loaded class to the document. (Per https://www.filamentgroup.com/lab/font-events.html)
+          // We'll also append the class to the `html`. (This can happen post-DOMready, we can't rely on our docClasses[] array. So we'll just append it to the `className`.)
+          win.Promise.all([
+            theSans.check(),
+            theSansItalic.check(),
+            theSansBold.check(),
+          ]).then(function () {
+            win.document.documentElement.className += " " + fontsClass;
+            sessionStorage.setItem("fontsLoaded", "loaded");
+          });
+        }
+
+        // Get scripts to load, if defined
+        var fullJS = utils.getMeta(fullJSKey);
+
+        if (fullJS) {
+          utils.loadJS(fullJS.content);
+        }
+
+        // Add scoping classes to HTML element
+        win.document.documentElement.className += " " + docClasses.join(" ");
+      })(this);
+    </script>
+    <style>
+      @font-face {
+        font-family: TheSans;
+        font-style: normal;
+        font-weight: 400;
+        src: url(themes/custom/eyp/type/thesans-400-semilight.woff2)
+            format("woff2"),
+          url(themes/custom/eyp/type/thesans-400-semilight.woff) format("woff");
+      }
+      @font-face {
+        font-family: TheSans;
+        font-style: italic;
+        font-weight: 400;
+        src: url(themes/custom/eyp/type/thesans-400-semilightitalic.woff2)
+            format("woff2"),
+          url(themes/custom/eyp/type/thesans-400-semilightitalic.woff)
+            format("woff");
+      }
+      @font-face {
+        font-family: TheSans;
+        font-style: normal;
+        font-weight: 600;
+        src: url(themes/custom/eyp/type/thesans-600-semibold.woff2)
+            format("woff2"),
+          url(themes/custom/eyp/type/thesans-600-semibold.woff) format("woff");
+      }
+      /*# sourceMappingURL=../dist/css/maps/type.css.map */
+    </style>
+    <link rel="stylesheet" href="themes/custom/eyp/css/css.10.css" />
+
+    <script>
+      document.createElement("picture");
+    </script>
+    <script src="themes/custom/eyp/dist/js/lib/picturefill.js" async></script>
+
+    <link
+      rel="stylesheet"
+      media="all"
+      href="sites/default/files/css/css_DfIk0kDE_97QqZBJr5TF4iiP6Rt7nG3gWSu-Jh5AKCY.css"
+    />
+
+    <!--[if lte IE 8]>
+      <script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+    <![endif]-->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="themes/custom/eyp/slick/slick.css"
+    />
+
+    <link rel="stylesheet" href="../use.typekit.net/yvu7mul.css" />
+  </head>
+
+  <body class="role-anonymous news-publications">
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+      <div class="pg-section pg-mast" id="start">
+        <header>
+          <div class="mast-inner">
+            <h1><a class="site-logo" href="index.html"></a></h1>
+            <div class="site-nav">
+              <nav
+                role="navigation"
+                aria-labelledby="block-eyp-main-menu-menu"
+                id="block-eyp-main-menu"
+              >
+                <ul class="main-menu" id="mainMenu">
+                  <li>
+                    <a
+                      href="index.html"
+                      data-drupal-link-system-path="node/3346"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    >
+                    <div>
+                      <ul>
+                        <li>
+                          <a
+                            href="new1-founder-wish.html"
+                            data-drupal-link-system-path="node/2221"
+                            >Founder's Wish</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href="people.html"
+                            data-drupal-link-system-path="people"
+                            >Personnel organization</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      href="news-publications.html"
+                      data-drupal-link-system-path="news-publications"
+                      >News</a
+                    >
+                  </li>
+
+                  <li>
+                    <a href="people.html" data-drupal-link-system-path="node/455">People</a>
+                  </li>
+                </ul>
+                <a
+                  href="javascript:void(0);"
+                  class="mobilemenu"
+                  onclick="myFunction()"
+                >
+                  <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="16"></rect>
+                    <rect y="30" width="100" height="16"></rect>
+                    <rect y="60" width="100" height="16"></rect>
+                  </svg>
+                </a>
+                <a class="search-anchor" href="#edit-terms">Search</a>
+              </nav>
+            </div>
+          </div>
+        </header>
+      </div>
+      <!--  part 1 nav end /end .pg-section -->
+
+      <div class="pg-section pg-lead">
+        <div>
+          <h1 class="heading-page">News &amp; Publications</h1>
+        </div>
+      </div>
+
+      <div data-drupal-messages-fallback class="hidden"></div>
+
+      <main>
+        <div class="pg-section pg-content">
+          <div class="l-has-rail">
+            <div class="p-more group">
+              <div class="article-list">
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a href="new1-founder-wish.html">
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/BacBen.jpg"
+                            alt="Troy Leonard"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">JUNE 11, 2020</span>
+                        <span
+                          property="schema:name"
+                          content="Get to Know Troy Leonard"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new1-founder-wish.html"
+                            rel="bookmark"
+                            >FOUNDER'S WISH</a
+                          >
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href="">
+                            Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          Nelson Mandela, one of the world's most respected
+                          leaders once said, "Education is the most powerful
+                          weapon that people use to change the world."
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new2.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new2.jpg"
+                            alt="MEZIO"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">September 1, 2021</span>
+                        <span
+                          property="schema:name"
+                          content="Why I Do What I Do: Finding the Magic  "
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new2.html"
+                            rel="bookmark"
+                            >UPDATE NEW RECRUITMENT INFORMATION FOR SCHOOL YEAR
+                            2021 - 2022
+                          </a>
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          According to the latest enrollment information about
+                          the multi-method admission to universities and
+                          admission procedures from August 25 to September 15,
+                          2021.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a href="new3.html">
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new3.jpg"
+                            alt="MEZIO"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">September 1, 2021</span>
+                        <span
+                          property="schema:name"
+                          content="Why I Do What I Do: Finding the Magic  "
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new3.html"
+                            rel="bookmark"
+                            >RECRUITMENT INFORMATION FOR SCHOOL YEAR 2021 - 2022
+                          </a>
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          Co May Dormitory "Following in the footsteps of poor
+                          students - Studying well" was built and put into
+                          operation by businessman Pham Van, owner of Co May
+                          Private Enterprise. 2021 is the sixth year of
+                          continued selection to help students from
+                          disadvantaged backgrounds study well,...
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new4.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new4.jpg"
+                            alt="richards lab"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">June 15, 2021</span>
+                        <span
+                          property="schema:name"
+                          content="College Campuses: Preserving the Past and Building for the Future"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new4.html"
+                            rel="bookmark"
+                            >Grateful to "THE TEACHER WITHOUT THE PASSION"</a
+                          >
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> by</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          On April 12, 2021, on the 5th anniversary of Uncle
+                          Pham Van Ben's passing, Co May Dormitory held a warm
+                          gratitude ceremony with the attendance of teachers
+                          from Nong Lam University, Dormitory Management Board,
+                          and alumni. with fellow students.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new5.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new5.jpg"
+                            alt="Raunak Headshot"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">June 15, 2021</span>
+                        <span
+                          property="schema:name"
+                          content="Inside the Green Lab: Raunak Tibrewala "
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new5.html"
+                            rel="bookmark"
+                            >SKILL TRAINING PROGRAM "BETTER LEARNING - BETTER
+                            COMMUNICATION".
+                          </a>
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          On April 25, 2021, Co May Dormitory held a weekend
+                          activity, with the skill training program "BETTER
+                          LEARNING - BETTER COMMUNICATION".
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new6.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new6.jpg"
+                            alt="Yasmeen"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">January 8, 2021</span>
+                        <span
+                          property="schema:name"
+                          content="A Look Back on the NOMA Research Fellowship"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new6.html"
+                            rel="bookmark"
+                            >Invite alumni to receive the yearbook</a
+                          >
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          NOTIFICATION Dear Alumni of Co May Dormitory In order
+                          to keep the memory of Co May dormitory. The Management
+                          Board of Co May Dormitory invites the alumni of the
+                          courses to receive the yearbook of the Co May
+                          dormitory.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new7.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new7.jpg"
+                            alt="students working in write-up space"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">July 19, 2020</span>
+                        <span
+                          property="schema:name"
+                          content="In the Lab: Student Write-Up Spaces in Higher Education "
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new7.html"
+                            rel="bookmark"
+                            >JOIN THE JOURNEY OF DISCOVERING THAILAND
+                          </a>
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          From July 5 to July 9, Co May Dormitory cooperated
+                          with Co May Saigon Co., Ltd to organize the first
+                          Thailand discovery summer camp program in 2019 for 28
+                          students with academic and training achievements. good
+                          in the 2018-2019 school year.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new8.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new8.jpg"
+                            alt="exterior of birch bayh federal us courthouse"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">July 18, 2020</span>
+                        <span
+                          property="schema:name"
+                          content="Your Questions Answered: Modernizing an Occupied Building"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new8.html"
+                            rel="bookmark"
+                            >PARTICIPATE IN THE 1st TRADITIONAL KATA WINNER OF 2019</a
+                          >
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> by</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                         </h3>
+                      </div>
+                      <div>
+                        <p>
+                          On June 16, a large number of students from Suzucho Karatedo Fuji Martial Arts Club, Karatedo Sanchin Martial Arts Club and Law University Karate Club competed at the 1st Traditional Kata Tournament 2019 held for the first time in 2019. Organized by the Southern Association of Suzucho Karatedo Dragon Fruit.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new9.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new9.jpg"
+                            alt="rollins interior"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">July 18, 2020</span>
+                        <span
+                          property="schema:name"
+                          content="Curricular and Co-Curricular Spaces Merge Seamlessly in a Single Academic Facility"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new9.html"
+                            rel="bookmark"
+                            >
+                            Art inspiration
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href="">Nguyen Van Thanh</a>
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          On the afternoon of December 9 at Co May Dormitory Hall, the final round of the Ky Co May Student Singing, Dance and Music Festival took place. The final round had 16 participating performances and more than 300 students of the dormitory. Xa Co May participated in cheering.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="article-brief">
+                  <div class="l-equal">
+                    <div class="p-eq group">
+                      <a
+                        href="new10.html"
+                      >
+                        <div class="hero">
+                          <img
+                            src="sites/default/files/styles/medium_4_3/public/2021-08/new10.jpg"
+                            alt="Terence McCabe Headshot"
+                          />
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="p-eq group">
+                      <div class="title-meta">
+                        <span class="meta">July 18, 2020</span>
+                        <span
+                          property="schema:name"
+                          content="Architectural Leaders Share their Outlook for the Triangle"
+                          class="hidden"
+                        ></span>
+
+                        <h2 class="heading-title-brief">
+                          <a
+                            href="new10.html"
+                            rel="bookmark"
+                            >EARLY TET TET FOR STUDENTS FROM HOME</a
+                          >
+                        </h2>
+
+                        <h3 class="heading-sub">
+                          <span class="info-meta"> featuring</span>
+
+                          <a href=""
+                            >Nguyen Van Thanh</a
+                          >
+                        </h3>
+                      </div>
+                      <div>
+                        <p>
+                          Recently, at Phu Tho Gymnasium, the 9th "Students celebrate Tet away from home" program took place in 2019. This year's program was organized by the Student Cultural House of Ho Chi Minh City. Ho Chi Minh City cooperated with Vietnam Goods Trading Service Joint Stock Company and businesses to participate in the Tet Shopping Fair held.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="nav-pages">
+                <nav>
+                  <ol class="list-pages">
+                    <li>
+                      <a
+                        href="news-publications02e4.html?page=0"
+                        class="is-active"
+                        >1</a
+                      >
+                    </li>
+                    <li>
+                      <a href="news-publications2679.html">2</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">3</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">4</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">5</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">6</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">7</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">8</a>
+                    </li>
+                    <li>
+                      <a href="news-publications.html">9</a>
+                    </li>
+
+                    <li>
+                      <a
+                        href="news-publications2679.html?page=1"
+                        title="Go to next page"
+                        class="next"
+                        }}
+                      >
+                        <span class="visually-hidden">Next page</span>
+                        <span aria-hidden="true">Next</span>
+                      </a>
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /end .pg-section -->
+      </main>
+
+      <div class="pg-section pg-footer">
+        <div>
+          <p class="pg-top">
+            <a class="top" href="#start">
+              Top
+              <!-- <i class = "ti-angle-up icon-back-to-top"> </i> -->
+            </a>
+          </p>
+          <footer>
+            <div>
+              <div class="group p-eq">
+                <div class="eyp-info">
+                  <span class="tagline"
+                    ><a href="index.html">Co May Dormitory</a></span
+                  >
+                </div>
+                <form
+                  action=""
+                  method="get"
+                  id="views-exposed-form-search-results-results-page"
+                  accept-charset="UTF-8"
+                >
+                  <label for="edit-terms" class="a11y">Search Keywords</label>
+                  <input
+                    title="Search keywords"
+                    data-drupal-selector="edit-terms"
+                    type="text"
+                    id="edit-terms"
+                    name="terms"
+                    value=""
+                    size="15"
+                    maxlength="128"
+                    class="form-text"
+                  />
+                  <input
+                    data-drupal-selector="edit-submit-search-results"
+                    type="submit"
+                    id=""
+                    value="Search"
+                    class="button js-form-submit form-submit"
+                  />
+                </form>
+                <h2 class="heading-major"></h2>
+                <ul class="links-social">
+                  <li>
+                    <a
+                      data-grunticon-embed
+                      class="social-contact"
+                      href="tel:0913887055"
+                    >
+                      Phone: 0913887055
+                    </a>
+                  </li>
+                </ul>
+                <div class="copyright-top" data-set="copyright"></div>
+                <div style="margin-top: 1rem; font-size: 0.8rem; color: #848b92">
+                  <a style="color: #848b92" href="">Privacy policy</a> |
+                  <a style="color: #848b92" href="">Compliance</a>
+                </div>
+              </div>
+              <div class="footer-links group-alt p-eq">
+                <nav
+                  role="navigation"
+                  aria-labelledby="block-eypsectorlinks-menu"
+                  id="block-eypsectorlinks"
+                >
+                  <ul>
+                    <li>
+                      <a
+                        href="https://goo.gl/maps/ftnSa3YCHbRBEV5k8"
+                        class="has-slash"
+                        data-drupal-link-system-path="node/4"
+                        >Quarter 6, Linh Trung Ward</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://goo.gl/maps/ftnSa3YCHbRBEV5k8"
+                        class="has-slash"
+                        data-drupal-link-system-path="node/6"
+                        >Thu Duc District,
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://goo.gl/maps/ftnSa3YCHbRBEV5k8"
+                        class="has-slash"
+                        data-drupal-link-system-path="node/2"
+                        >Ho Chi Minh City</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://goo.gl/maps/ftnSa3YCHbRBEV5k8"
+                        class="has-slash"
+                        data-drupal-link-system-path="node/3"
+                        >On the campus of</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="https://goo.gl/maps/ftnSa3YCHbRBEV5k8"
+                        class="has-slash"
+                        data-drupal-link-system-path="node/2611"
+                        >Nong Lam University</a
+                      >
+                    </li>
+                  </ul>
+                </nav>
+    
+                <nav
+                  role="navigation"
+                  aria-labelledby="block-eyp-footer-menu"
+                  id="block-eyp-footer"
+                >
+                  <ul class="footer-secondary-navigation">
+                    <li>
+                      <a
+                        href="index.html"
+                        data-drupal-link-system-path="node/3348"
+                        >Home</a
+                      >
+                    </li>
+                    
+                    <li>
+                      <a
+                        href="news-publications.html"
+                        data-drupal-link-system-path="people"
+                        >News</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="people.html"
+                        data-drupal-link-system-path="node/3015"
+                        >People</a
+                      >
+                    </li>
+                    <li></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!-- /end .pg-section.pg-footer -->
+      <script>
+        (function (h, o, t, j, a, r) {
+          h.hj =
+            h.hj ||
+            function () {
+              (h.hj.q = h.hj.q || []).push(arguments);
+            };
+          h._hjSettings = { hjid: 812749, hjsv: 6 };
+          a = o.getElementsByTagName("head")[0];
+          r = o.createElement("script");
+          r.async = 1;
+          r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+          a.appendChild(r);
+        })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+      </script>
+    </div>
+
+    <script type="application/json" data-drupal-selector="drupal-settings-json">
+      {
+        "path": {
+          "baseUrl": "\/",
+          "scriptPath": null,
+          "pathPrefix": "",
+          "currentPath": "news-publications",
+          "currentPathIsAdmin": false,
+          "isFront": false,
+          "currentLanguage": "en"
+        },
+        "pluralDelimiter": "\u0003",
+        "suppressDeprecationErrors": true,
+        "google_analytics": {
+          "trackMailto": true,
+          "trackDownload": true,
+          "trackDownloadExtensions": "7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"
+        },
+        "ajaxTrustedUrl": { "\/search2\/all": true },
+        "user": {
+          "uid": 0,
+          "permissionsHash": "9516fbf3a2ab19fd6663cbd0132cb0cd234b16eacb6e951ed29405ef91efa53a"
+        }
+      }
+    </script>
+    <script src="sites/default/files/js/js_yE3xdbJIadUp7g85aImDuBgneU1qrt-_ymFSBzE4DrU.js"></script>
+
+    <script src="themes/custom/eyp/dist/js/main3f56.js?v=11"></script>
+    <script
+      type="text/javascript"
+      src="themes/custom/eyp/slick/slick.min.js"
+    ></script>
+    <script src="themes/custom/eyp/js/lib/imagesloaded.pkgd.min.js"></script>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".eyp-slider").slick({
+          variableWidth: true,
+          centerMode: true,
+          navigation: true,
+          speed: 300,
+          lazyLoad: "ondemand",
+        });
+
+        jQuery(".l-synopsis.gallery").each(function () {
+          var initialcap = jQuery(this)
+            .find(".slick-current .caption p")
+            .html();
+          jQuery(this).find(".image-caption").text(initialcap);
+        });
+      });
+
+      jQuery(window).resize(function () {
+        jQuery(".eyp-slider")[0].slick.refresh();
+      });
+
+      jQuery(".eyp-slider.inpage-gallery").on(
+        "afterChange",
+        function (event, slick, currentSlide) {
+          var elt = slick.$slides.get(currentSlide);
+
+          jQuery(this).next().text(jQuery(elt).find(".caption p").html());
+        }
+      );
+
+      function myFunction() {
+        var x = document.getElementById("mainMenu");
+        if (x.style.display === "block") {
+          x.style.display = "none";
+        } else {
+          x.style.display = "block";
+        }
+      }
+
+      (function ($) {
+        $("#block-eyp-main-menu > ul > li > a").hover(function () {
+          if (
+            $(this).is(':contains("Expertise")') ||
+            $(this).is(':contains("About EYP")')
+          ) {
+            console.log("h");
+            var position = $(this).offset().left - 15;
+            $(this)
+              .next()
+              .children()
+              .css("transform", "translate(" + position + "px");
+          }
+        });
+      })(jQuery);
+    </script>
+    <script type="text/javascript">
+      window.NREUM || (NREUM = {});
+      NREUM.info = {
+        beacon: "bam.nr-data.net",
+        licenseKey: "653864388b",
+        applicationID: "17864592",
+        transactionName: "YF1SZ0MEXBBWUUZeW1kXcVBFDF0NGEJTUFFoW1FQWQA=",
+        queueTime: 0,
+        applicationTime: 12,
+        atts: "TBpREQseTx4=",
+        errorBeacon: "bam.nr-data.net",
+        agent: "",
+      };
+    </script>
+  </body>
+
+  <!-- Mirrored from www.eypae.com/news-publications by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 31 Aug 2021 08:14:33 GMT -->
+</html>
